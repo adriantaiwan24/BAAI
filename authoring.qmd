@@ -1,0 +1,33 @@
+---
+title: Quarto Layout
+format: docx
+reference-location: margin
+jupyter: python3
+---
+
+## Placing Colorbars
+
+Colorbars indicate the quantitative extent of image data.
+Placing in a figure is non-trivial because room needs to
+be made for them. The simplest case is just attaching a 
+colorbar to each axes:^[See the [Matplotlib Gallery](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/colorbar_placement.html) to explore colorbars further].
+
+```{python}
+#| code-fold: true
+#| column: screen-inset
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(2, 2)
+fig.set_size_inches(20, 8)
+cmaps = ['RdBu_r', 'viridis']
+for col in range(2):
+    for row in range(2):
+        ax = axs[row, col]
+        pcm = ax.pcolormesh(
+          np.random.random((20, 20)) * (col + 1),
+          cmap=cmaps[col]
+        )
+        fig.colorbar(pcm, ax=ax)
+plt.show()
+```
