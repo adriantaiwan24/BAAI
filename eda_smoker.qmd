@@ -1,0 +1,48 @@
+---
+title: "EDA"
+author: "Adrian Taggruber"
+format: pptx
+echo: true
+---
+
+## Load Data
+
+```{python}
+import pandas as pd
+dataset = pd.read_csv("smoker.csv")
+```
+
+## Inspect structure
+
+```{python}
+dataset.shape
+```
+```{python}
+dataset.info()
+```
+
+## Inspect Value
+
+```{python}
+dataset.head()
+```
+
+```{python}
+dataset.tail()
+```
+
+## Statistics
+
+
+```{python}
+round(dataset.describe(), 2)
+```
+
+## Histogram 
+
+
+```{python}
+import matplotlib.pyplot as plt
+dataset["smoker"].hist()
+plt.show()
+```
