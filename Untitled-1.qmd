@@ -1,5 +1,5 @@
 ---
-title: "Testing quarto"
+title: "eda assignment"
 author: "Adrian Taggruber"
 date: 2024-11-13
 format: html   
