@@ -1,0 +1,53 @@
+---
+title: "Testing quarto"
+author: "Adrian Taggruber"
+date: 2024-11-13
+format: html   
+echo: true
+---
+
+## Load package
+```{python}
+import pandas as pd
+```
+
+## Load data from csv
+```{python}
+df = pd.read_csv("smoker.csv")
+```
+
+## Check dimension of dataset
+```{python}
+df.shape
+```
+
+## Check detail of dataset(cols, rows)
+```{python}
+df.info()
+```
+
+## Check first five rows
+```{python}
+df.head()
+```
+
+## Check last 5 rows
+```{python}
+df.tail()
+```
+
+## Calculate sum of treatment column
+```{python}
+df["treatment"].sum()
+```
+
+## Create a descriptive statistics
+```{python}
+df.describe()
+```
+
+## Count of unique values in outcome column
+
+```{python}
+df["outcome"].nunique()
+```

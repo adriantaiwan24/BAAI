@@ -2,7 +2,9 @@
 title: "Testing quarto"
 author: "Adrian Taggruber"
 date: 2024-11-13
-format: pdf    
+format: 
+  html: 
+    code-fold: true   
 echo: true
 ---
 
