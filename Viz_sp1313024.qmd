@@ -1,0 +1,91 @@
+---
+title: "Visualization 4/12/24"
+author: "Adrian Taggruber"
+toc: true
+echo: true
+format:
+    html:
+        embed-resources: true
+---
+ 
+## Data loading {.smaller}
+ 
+```{python}
+import pandas as pd
+df = pd.read_csv('smoker.csv')
+df
+```
+ 
+## Histogram
+ 
+### Single variable
+ 
+```{python}
+df['smoker'].hist()
+```
+ 
+### All variables
+ 
+```{python}
+df.hist() ;
+```
+ 
+## Data loading
+ 
+```{python}
+import pandas as pd
+df = pd.read_csv('customer_data.csv')
+df
+```
+ 
+## Line chart
+ 
+### One Variable
+ 
+```{python}
+df['Age'].plot()
+```
+ 
+### All Variables
+ 
+```{python}
+df.plot() ;
+```
+ 
+### All Variables, log scale for y axis
+ 
+```{python}
+df.plot(logy = True)
+```
+ 
+## Scatter plot
+ 
+### Two variables
+ 
+### Method 1
+ 
+```{python}
+df.plot(kind='scatter', x = 'Income', y = 'Age')
+```
+ 
+### Method 2
+ 
+```{python}
+df.plot.scatter(x = 'Income', y = 'Age')
+```
+ 
+### All variables
+ 
+Dataset
+ 
+```{python}
+import seaborn as sns
+df = sns.load_dataset("iris")
+df
+```
+150 rows × 5 columns
+ 
+ 
+```{python}
+sns.pairplot(df, hue = 'species') ;
+```
